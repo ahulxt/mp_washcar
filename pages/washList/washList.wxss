@@ -1,0 +1,56 @@
+/* pages/washList/washList.wxss */
+.list-wrp{
+  display: flex;
+  align-items: center;
+  border-bottom:1px solid #ddd;
+  border-radius: 0;
+  padding:20rpx 40rpx;
+  line-height: 180%;
+  margin:0;
+}
+.list-wrp:last-child{
+  border-bottom:none;
+}
+.center{
+  width: 30%;
+  font-size: 32rpx;
+}
+.right{
+  width: 10%;
+}
+.left{
+  flex: 1;
+  color:#333;
+}
+.wash-title{
+  font-size:32rpx;
+  color:#333;
+}
+.ori{
+  font-size:26rpx;
+  color:#999;
+  text-decoration: line-through;
+  margin-right:20rpx;
+}
+.blue-text{
+  font-size:26rpx;
+}
+
+.detail-link{
+  font-size:28rpx;
+}
+.no-selected{
+  width: 28rpx;
+  height:28rpx;
+  border-radius: 50%;
+  border:1px solid #979797;
+  display: flex;
+}
+.selected{
+  width: 14rpx;
+  height:14rxp;
+  border-radius: 50%;
+  background: #E60101;
+  border:7rpx solid #fff;
+  flex: 1
+}

@@ -1,0 +1,17 @@
+<!--pages/contactUser/contactUser.wxml-->
+<view class="page">
+  <view class="content"> 
+    <view class="form-group boxshadow">
+      <view class="input-group" >
+        <input placeholder="联系人姓名"  value="{{name}}" bindinput="inputName" focus="{{isNameFocus}}"></input>
+        <!-- <icon class="clear" type="clear" color="#ddd" size="18" wx:if="{{name}}" catchtap="clear" id="name"></icon> -->
+      </view>
+      <view class="input-group">
+        <input placeholder="联系人电话"  value="{{tel}}" bindinput="inputTel" type="number" maxlength="11" focus="{{isTelFocus}}"></input>
+        <!-- <icon class="clear" type="clear" color="#ddd" size="18" wx:if="{{tel}}" bindtap="clear" id="tel"></icon> -->
+      </view>
+    </view>
+    <button class="submit-btn" disabled="{{submit}}" bindtap="submitContactUser">确定</button>
+  </view>
+  
+</view>

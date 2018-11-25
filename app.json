@@ -1,0 +1,28 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/recharge/recharge",
+    "pages/myCoupon/myCoupon",
+    "pages/couponList/couponList",
+    "pages/couponPay/couponPay",
+    "pages/orderList/orderList",
+    "pages/orderDetail/orderDetail",
+    "pages/washDetail/washDetail",
+    "pages/washList/washList",
+    "pages/webview/webview",
+    "pages/carInfo/carInfo",
+    "pages/setting/setting",
+    "pages/placeOrderResult/placeOrderResult",
+    "pages/contactUser/contactUser",
+    "pages/carList/carList",
+    "pages/login/login",
+    "pages/carBrand/carBrand",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

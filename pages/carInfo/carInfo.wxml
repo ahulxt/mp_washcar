@@ -1,0 +1,62 @@
+<!--pages/carInfo/carInfo.wxml-->
+<view class="page">
+  <view class="content"> 
+    <view class="form-group boxshadow">
+      <view class="input-group select-input-group" bindtap="selectCarBrand">
+        <input placeholder="请选择车型" disabled value="{{carBrand}}"></input>
+        <icon class="arrow-right"></icon>
+      </view>
+      <view class="input-col2" >
+        <view class="input-group select-input-group" bindtap="selectCarNumber" style="width:50%">
+          <input placeholder="请选择车牌区域" disabled value="{{textValue}}" ></input>
+          <icon class="arrow-right"></icon>
+        </view>
+        <view class="input-group select-input-group" bindtap="" style="width:50%">
+          <input placeholder="请输入车牌号码" value="{{textValue2}}" maxlength="7" bindinput="inputCarBrand"></input>
+        </view>
+      </view>
+      <view class="input-group select-input-group" bindtap="selectCarColor">
+        <input placeholder="请选择汽车颜色" disabled value="{{currentColorName}}"></input>
+        <icon class="arrow-right"></icon>
+      </view>
+    </view>
+    <button class="submit-btn" bindtap="submitCaiInfo">确定</button>
+    
+  </view>
+  
+
+  
+
+    <!--键盘-->
+  <block wx:if="{{isKeyboard}}">
+  <view class="keyboard">
+    <view class="keyboard-title">请选择车牌区域</view>
+    <view class="keyboard-box">
+
+      <!--省份简写键盘-->
+      
+      <view class="td td_nor {{itemName == textValue ? 'selected':''}}" wx:for="{{keyboardValue}}" wx:key="{{index}}" wx:for-index="idx" wx:for-item="itemName" bindtap="tapKeyboard" data-index="{{idx}}" data-value="{{itemName}}" hover-class="board_bg" hover-start-time="0" hover-stay-time="80">
+        {{itemName}}
+      </view>
+      
+
+     
+
+    </view>
+  </view>
+  </block>
+  <!--遮罩 S-->
+  <view class="drawer-mask" bindtap="hideSelect" wx:if="{{showDrawerFlag}}" catchtouchmove></view>
+
+  <block wx:if="{{showcolor}}">
+    <view class="color-select keyboard">
+      <view class="keyboard-title">请选择颜色</view>
+      <view class="color-select-box keyboard-box">
+        <view class="td color-td {{currentColorId == item.id ? 'selected':''}}" wx:for="{{colorList}}" wx:key="{{index}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="tapCarColor">
+          <view class="color-picker" style="background-color:{{item.code}}" data-id="{{item.id}}" data-name="{{item.name}}"></view>
+          <text class="color-name" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

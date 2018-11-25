@@ -1,0 +1,5 @@
+/* pages/placeOrderResult/placeOrderResult.wxss */
+.content{
+  width: 92%;
+  margin:0 auto;
+}

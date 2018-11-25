@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "coupon": "/components/coupon/coupon",
+    "payment": "/components/payment/payment"
+  },
+  "navigationBarTitleText": "洗车卡购买"
+}

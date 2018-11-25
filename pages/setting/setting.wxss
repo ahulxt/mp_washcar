@@ -1,0 +1,6 @@
+/* pages/logout/logout.wxss */
+.content{
+  width:92%;
+  padding:20rpx 0;
+  margin:0 auto
+}

@@ -1,0 +1,6 @@
+<view class="coupon-list" style="background:#FEE800 url({{couponList.background}});background-size:cover">
+  <view class="label" wx:if="{{couponList.hot_status == 1}}">热销</view>
+  <view class="coupon-title">{{couponList.name}}</view>
+  <view class="coupon-amount"><text class="now">{{couponList.price}}</text>元<text class="ori">{{couponList.price_ori}}元</text></view>
+  <view class="coupon-expires"><view>可使用次数:{{couponList.use_times}}次</view><view>有效期{{couponList.expire_days}}天</view></view>
+</view>

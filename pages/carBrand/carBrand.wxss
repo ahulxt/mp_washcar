@@ -1,0 +1,174 @@
+/* pages/carBrand/carBrand.wxss */
+.img{
+    /*background: url("chu.png") no-repeat;*/
+    background-size: cover;
+    width:60rpx;
+    height:60rpx;
+    /*border-radius:50%;*/
+    background:#fff;
+}
+.img-hot{
+    display: block;
+    margin:0 auto;
+}
+
+/*热门品牌*/
+.hot-view{
+    background: #fff;
+    /*margin-top:20rpx;*/
+    border-bottom:solid 1rpx #dedede;
+}
+.hot-view  > text{
+    display: block;
+    font-size:32rpx;
+    height:80rpx;
+    line-height: 80rpx;
+    border-bottom:solid 1rpx #dedede;
+    padding-left:18rpx;
+}
+.hot-item{
+    /*默认不换行*/
+    /*padding:20rpx;*/
+    padding: 0 63rpx 49rpx 63rpx;
+    text-align: center;
+    font-size:24rpx;
+    color:#444;
+}
+.hot-row{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hot-row > view{
+    padding-top:53rpx;
+}
+.hot-name{
+    padding-top:20rpx;
+}
+
+/*品牌列表*/
+.brand-scroll{
+    /*height:667px; */
+    /*??*/
+}
+.brand-item view{
+    display:block;
+}
+.brand-item > text{ 
+    display: block;
+    color:#777;
+    background:#eee;
+    font-size:30rpx;
+    height: 61rpx;
+    line-height:61rpx;
+    padding-left:32rpx;
+}
+.brand-item > view{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height:100rpx;
+    font-size:30rpx;
+    line-height:100rpx;
+    padding-left:32rpx;
+    background: #fff;
+}
+.brand-item view:not(:last-child){
+    border-bottom:solid 1rpx #eee;
+}
+.brand-name{
+    padding-left:30rpx;
+}
+.letter-item{
+    position:fixed;
+    width:20px;
+    top:50%;
+    right:5rpx;
+    /*border:solid 1px #ccc;
+    border-radius:7px;*/
+    transform: translate(0,-50%);
+}
+.letter-hover{
+    position:fixed;
+    width:20px;
+    top:50%;
+    right:0;
+    transform: translate(0,-50%);
+    border-radius:7px;
+    background:rgba(0,0,0,.2);
+}
+.letter-li{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:#3572ce;
+    background:transparent;
+    font-size:26rpx;
+    height:40rpx;
+    position: relative;
+}
+.letter-li:target{
+    color:red;
+}
+/*
+.list-fixed{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.list-fixed .fixed-title{
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-left: 20px;
+  font-size: 26rpx;
+  color:#3572ce;
+  background:transparent;
+}
+*/
+
+.lettet-tip{
+  position: absolute;
+  top:-30rpx;
+  left:-150rpx;
+  font-size:50rpx;
+  width:100rpx;
+  height:100rpx;
+  line-height: 100rpx;
+  background: #ccc;
+  text-align: center;
+  border-radius: 50%;
+  color:#fff;
+}
+.lettet-tip::after{
+  content: ' ';
+  width: 40rpx;
+  height:40rpx;
+  background: inherit;
+  right: -10rpx; 
+  position: absolute;
+  transform: rotate(45deg); 
+  top:50%; 
+  margin-top:-20rpx;
+}    
+.letterHighlight{
+  background:#3572ce;
+  color: #fff;
+  border-radius: 50%;
+}  
+.scoll-car-series{
+  height: 100%;
+}
+.series-row{
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 100rpx;
+  color: #2a2a2a;
+  font-size: 30rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #eee;
+  padding-left: 30rpx;
+}
+
+

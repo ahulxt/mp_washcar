@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "sidebar": "/components/sidebar/sidebar"
+  },
+  "navigationBarTitleText": "猫头鹰洗车"
+}

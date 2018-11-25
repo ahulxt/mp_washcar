@@ -1,0 +1,90 @@
+/* pages/couponList/couponList.wxss */
+Page{
+  background: #fff;
+}
+.box-wrp{
+  display: flex;
+  align-items: center;
+  padding:20rpx 26rpx;
+  font-size: 30rpx;
+}
+.input-group{
+  font-size: 30rpx;
+  color:#333;
+  padding:10rpx 26rpx;
+}
+.input-group .red-text{
+  margin-left:30rpx;
+}
+.coupon-wrp{
+  padding:30rpx 26rpx;
+}
+.balance{
+  flex: 1;
+}
+.recharge-btn{
+  width:156rpx;
+  height:56rpx;
+  line-height: 56rpx;
+  background: #FEE500;
+  color:#666666;
+  font-size:28rpx;
+  border-radius: 20rpx;
+}
+.gray-hr{
+  background: #F2F2F2;
+  height:30rpx;
+}
+.popup{
+  position: fixed;
+  left: 50%;
+  bottom: 100%;
+  width:560rpx;
+  margin-left:-310rpx;
+  height:auto;
+  background: #fff;
+  border-radius: 10rpx;
+  z-index: 100001;
+  padding:0 30rpx;
+  font-size:28rpx;
+}
+.pop-title{
+  height:120rpx;
+  line-height: 120rpx;
+  border-bottom:1px solid #ddd;
+  font-size:36rpx;
+}
+.pop-title .now{
+  color:#FF0000;
+}
+.pop-desc{
+  padding:30rpx 0;
+  line-height: 180%;
+  color:#333;
+}
+.submit-btn{
+  margin:20rpx auto 50rpx;
+  width:275rpx;
+}
+.close{
+  width: 54rpx;
+  height:54rpx;
+  line-height: 54rpx;
+  text-align: center;
+  border-radius: 50%;
+  border:2px solid #fff;
+  font-size: 50rpx;
+  color:#fff;
+  position: absolute;
+  top:-154rpx;
+  right:10rpx;
+}
+.close::after{
+  content: '';
+  width:26rpx;
+  height:100rpx;
+  border-right:1px solid #fff;
+  position: absolute;
+  top:56rpx;
+  left:0;
+}

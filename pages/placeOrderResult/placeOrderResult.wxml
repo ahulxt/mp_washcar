@@ -1,0 +1,14 @@
+<!--pages/placeOrderResult/placeOrderResult.wxml-->
+<view class="page">
+  <view class="content">
+    <view class="result-wrp">
+      <view class="result-img"><image src="result.png" mode="widthFix"></image></view>
+      <block>
+        <view class="result-text" wx:if="{{payment_status == 1}}"><text>已使用洗车卡支付成功\n正在为您派单</text></view>
+        <view class="result-text" wx:else><text>支付成功\n正在为您派单</text></view>
+      </block>
+      <button class="submit-btn"  bindtap="toOrderList">查看订单</button>
+      <!-- <button class="submit-btn disabled-style-btn"  bindtap="toCancelOrder">取消订单</button> -->
+    </view>
+  </view>
+</view>

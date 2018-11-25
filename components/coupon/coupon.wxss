@@ -1,0 +1,53 @@
+.red-text{
+  color:#FF0000;
+}
+.coupon-list{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10rpx;
+  position: relative;
+  overflow: hidden; 
+  color:#333;
+  padding:40rpx 20rpx 20rpx 100rpx;
+  margin-bottom:30rpx;
+}
+.coupon-list>view{
+  flex: 1;
+}
+.coupon-list .label{
+  width: 200rpx;
+  height:40rpx;
+  line-height: 40rpx;
+  font-size:26rpx;
+  color:#fff;
+  background: #FF0303;
+  text-align: center;
+  transform: rotate(-45deg);
+  position: absolute;
+  top:26rpx;  
+  left:-54rpx; 
+  
+}
+.coupon-title{
+  font-size:38rpx;
+}
+.coupon-amount{
+  font-size:38rpx;
+  font-weight: bold;
+}
+.coupon-amount .now{
+  font-size:68rpx;
+  margin-right:10rpx;
+}
+.ori{
+  font-size:30rpx;
+  text-decoration: line-through;
+  color:#666;
+  margin-left:10rpx;
+}
+.coupon-expires{
+  display: flex;
+  align-items:flex-end;
+  justify-content: space-between;
+  font-size:22rpx;
+}

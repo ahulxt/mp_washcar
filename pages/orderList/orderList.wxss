@@ -1,0 +1,66 @@
+/* pages/orderList/orderList.wxss */
+
+.content{
+  width: 92%;
+  margin:0 auto;
+  padding:20rpx 0;
+}
+.list-view{
+  box-sizing: border-box;
+  padding-bottom:30rpx;
+}
+.list-wrp{
+  box-sizing: border-box;
+  width:92%;
+  margin:0 auto 30rpx;
+}
+.list-wrp:first-child{
+  margin-top:30rpx;
+}
+.list-item{
+  margin-bottom:30rpx;
+}
+.arrow-right{
+  width: 15rpx;
+  height: 15rpx;
+  margin-left:10rpx;
+}
+.success{
+  color:#1AAD19;
+}
+
+/* 未付款 */
+.status1{
+  color:#E8011A;
+}
+.status1 .arrow-right{
+  border-top: 1px solid #E8011A;
+  border-right: 1px solid #E8011A;
+}
+.status5,.status7{
+  color:#999;
+}
+.status5 .arrow-right,.status7 .arrow-right{
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+}
+.status3{
+  color:#1AAD19;
+}
+.status3 .arrow-right{
+  border-top: 1px solid #1AAD19;
+  border-right: 1px solid #1AAD19;
+}
+.status2{
+  color:#E8011A;
+}
+.status2 .arrow-right{
+  border-top: 1px solid #E8011A;
+  border-right: 1px solid #E8011A;
+}
+.bottom-text{
+  font-size: 28rpx;
+  color:#999;
+  
+  text-align: center;
+}

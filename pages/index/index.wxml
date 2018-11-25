@@ -1,0 +1,106 @@
+<!--pages/index/index.wxml-->
+<view class="page">
+  <view class="content">
+    <view class="banner">
+      <swiper class="banner-img" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+          <swiper-item>
+            <image src="{{item.detail.image}}" class="slide-image" bindtap="toLinkPage" data-link="{{item.detail.link}}"/>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="user-img">
+        <view class="radius-box">
+          <view class="inner-box" bindtap="showSideBar">
+            <open-data  type="userAvatarUrl" style=""></open-data>
+            <!-- <image src="{{ open_data ? open_data.avatarUrl:'temp.gif'}}"></image> -->
+          </view>
+          <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button> -->
+        </view>
+        
+      </view>
+    </view>
+    <form report-submit="true"  bindsubmit="placeOrder">
+    <view class="form-group">
+      <view class="input-group no-bottom-border" bindtap="selectService">
+        <image class="list-icon" src="/images/service-icon.png" mode="aspectFit"></image>
+        <input placeholder="点击选择服务项目" disabled value="{{wash_product_name}}"></input>
+        <icon class="arrow-right"></icon>
+      </view>
+    </view>
+    
+    <view class="form-group">
+      <view class="input-group" bindtap="selectContactUser">
+        <image class="list-icon" src="/images/contact-user.png" mode="aspectFit"></image>
+        <input placeholder="车主联系人" disabled value="{{contactInfo}}"></input>
+        <icon class="arrow-right"></icon>
+      </view>
+
+      <view class="input-group" bindtap="chooseAdress">
+        <image class="list-icon" src="/images/adress.png" mode="aspectFit"></image>
+        <input placeholder="请选择地址" disabled value="{{address}}" ></input>
+        <icon class="arrow-right"></icon>
+      </view>
+
+
+      <view class="input-group" bindtap="bindDetailAddress">
+        <image class="list-icon" src="/images/comment.png" mode="aspectFit"></image>
+        <input placeholder="详细地址(如道路、小区、门牌号等)"  value="{{detailAddress}}"  bindinput="inputDetailAddress"></input>
+      </view>
+
+      <view class="input-group"  bindtap="chooseCar">
+        <image class="list-icon" src="/images/car.png" mode="aspectFit"></image>
+        <input placeholder="请选择车辆"  disabled value="{{carInfo}}"></input>
+        <icon class="arrow-right"></icon>
+      </view>
+
+      <view class="input-group" bindtap="selectWashTime">
+        <image class="list-icon" src="/images/wash-time.png" mode="aspectFit"></image>
+        <picker mode="selector" disabled="{{isServiceList}}" bindchange="bindServiceTimeChange" value="{{serviceTimeIndex}}" range="{{serviceTimeList}}" range-key="text" >
+          <view class="picker">
+            <text wx:if="{{!serviceTimeList[serviceTimeIndex]}}" style="color:#999">请选择清洗时间</text>
+            <text>{{serviceTimeList[serviceTimeIndex].text}}</text>
+          </view>
+        </picker>
+        <icon class="arrow-right"></icon>
+      </view>
+      <!-- <view class="input-group {{(total && totalOri)?'':'no-bottom-border'}}"  bindtap="chooseCoupon">
+        <image class="list-icon" src="/images/coupon.png" mode="aspectFit"></image>
+        <input placeholder="请选择优惠券/年卡"  disabled value="洗车优惠券"></input>
+        <view><text class="red-text">-15元</text></view>
+        <view><text class="color999">暂无可用</text></view>
+        <icon class="arrow-right"></icon>
+      </view> -->
+
+      <view class="price" wx:if="{{wash_product_id}}">
+        <view class="presentPrice"><text class="rmb">￥</text>{{total}}</view>
+        <view class="originalPrice"> 原价{{totalOri}}元 </view>
+      </view>
+    </view>
+    <button class="submit-btn"  formType="submit" disabled="{{!(wash_product_name && (contactInfo||contactLast) && address && detailAddress && carInfo && serviceTimeList[serviceTimeIndex].text)}}">预约洗车</button>
+    </form>
+    <view class="bottom-link blue-text"  bindtap="toRecharge">充值优惠</view>
+    <view class="bottom-link" bindtap="makePhoneCall">联系客服</view>
+  </view>
+
+<!--sidebar组件-->
+  <sidebar show-dialog="{{showDialog}}" direction="right">
+    <view class="slot-wrp">
+      <view class="header-img sidebar-item">
+        <open-data  type="userAvatarUrl" style=""></open-data>
+      </view>
+      <view class="sidebar-item">{{userInfo.phone}}</view>
+      <view class="sidebar-item">余额：{{userInfo.balance}} 元</view>
+      
+      <view class="sidebar-links">
+        <view class="link-item" bindtap="toRecharge"><image src="link3.png" class="list-icon" mode="aspectFit"></image><text>我的钱包</text></view>
+        <view class="link-item" bindtap="toOrderList"><image src="link2.png" class="list-icon" mode="aspectFit"></image><text>我的订单</text></view>
+        <view class="link-item" bindtap="toSetting"><image src="link1.png" class="list-icon" mode="aspectFit"></image><text>设置</text></view>
+      </view>
+    </view>
+  </sidebar>
+
+
+</view>
+

@@ -1,0 +1,111 @@
+/* pages/carInfo/carInfo.wxss */
+page{
+  background: #f3f4f6;
+}
+.content{
+  width:92%;
+  padding:20rpx 0;
+  margin:0 auto
+}
+.keyboard{
+  z-index: 9999;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: #e8e9eb;
+  
+}
+.keyboard-title{
+  text-align: center;
+  background: #fff;
+  color:#999;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+}
+.keyboard-box {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 15rpx solid #e8e9eb;
+  border-top: 20rpx solid #e8e9eb;
+  padding:0 10rpx;
+}
+
+.td {
+  font-family: "微软雅黑";
+  flex-grow: 1;
+  text-align: center;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  margin: 5rpx;
+  border: 1rpx solid #cdd0d5;
+  color: #1e1e1e;
+  border-radius: 10rpx 10rpx 10rpx 10rpx;
+  box-shadow: 5rpx 5rpx 2rpx #cdd0d5;
+  
+}
+
+.td_nor {
+  flex: 1 1 10%;
+}
+
+.board_bg {
+  box-shadow: 0 0 0 #e5e5e5;
+  background: #e5e5e5;
+}
+.board_bg_spec {
+  box-shadow: 0 0 0 #e5e5e5;
+}
+.color-td{
+  padding:0 30rpx;
+  display: -webkit-flex;
+  display: flex;
+  background: #fff;
+  height:80rpx;
+  line-height: 80rpx;
+  margin:9rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+.color-picker{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  margin-top:30rpx;
+  margin-right:10rpx;
+}
+.selected{
+  color:#1892D0;
+}
+
+/*mask*/  
+.drawer-mask {  
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000;  
+  opacity: 0.3;  
+  overflow: hidden;  
+}
+.form-group{
+  border-radius: 10rpx;
+}
+.submit-btn{
+  margin-top:30rpx;
+}
+.input-col2{
+  border-bottom:1px solid #e6e6e6;
+  display: flex;
+  display: -webkit-flex;
+}
+.input-col2 .input-group{
+  border-bottom:0;
+}

@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+<view class="page">
+  <view class="content">
+    <view class="form-group boxshadow">
+      <view class="input-group">
+        <input  type="number" placeholder="请输入您的手机号" bindinput="getPhoneValue"  maxlength="11"></input>
+      </view>
+      <view class="input-group">
+        <input type="number" placeholder="请输入短信验证码" style="width:70%"  bindinput="getCodeValue" maxlength="6"></input>
+        <button class="code-btn" bindtap="getVerificationCode" disabled="{{disabled}}">{{codeName}}</button>
+      </view>
+      
+    </view>
+    <button class="submit-btn" disabled="{{submit}}" bindtap="login">确定</button>
+  </view>
+</view>

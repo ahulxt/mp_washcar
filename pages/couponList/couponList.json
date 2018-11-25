@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "coupon": "/components/coupon/coupon"
+  },
+  "navigationBarTitleText": "充值"
+}

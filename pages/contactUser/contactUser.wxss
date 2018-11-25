@@ -1,0 +1,20 @@
+/* pages/contactUser/contactUser.wxss */
+.content{
+  width:92%;
+  padding:20rpx 0;
+  margin:0 auto
+}
+.form-group{
+  border-radius: 10rpx;
+}
+.input-group{
+  display: flex;
+  align-items: center;
+}
+.clear{
+  display: inline-block;
+  width: 18px;
+  height:18px;
+  position: relative;
+  right: 10rpx;
+}

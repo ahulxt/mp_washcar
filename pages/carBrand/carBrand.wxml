@@ -1,0 +1,81 @@
+<!--pages/carBrand/carBrand.wxml-->
+<view >
+  <scroll-view 
+    class="swiper-content" 
+    style="height:{{winHeight}}px" 
+    scroll-y="{{!showDrawerFlag}}"
+    scroll-into-view="{{toView}}" 
+    scroll-top="{{scrollTop}}"
+    bindscroll="scroll" 
+  >
+    <view class="hot-view">
+      <text id="hot">热门品牌</text>
+      <view class="hot-item">
+        <view class="hot-row">
+          <view 
+            wx:for="{{brandData.hot}}" 
+            wx:key="index"
+            wx:if="{{index < 5}}" 
+            data-id="{{item.id}}" 
+            data-name="{{item.name}}"
+            bindtap="showDrawer"
+          >
+              <image class="img img-hot" src="{{item.logo}}"  mode="aspectFit" data-id="{{item.id}}" data-name="{{item.name}}">
+              </image>
+              <view class="hot-name" data-id="{{item.id}}" data-name="{{item.name}}">
+                  {{item.name}}
+              </view>
+          </view>
+        </view>
+
+        <view class="hot-row">
+            <view  
+              wx:for="{{brandData.hot}}" 
+              wx:key="index"
+              wx:if="{{index > 4}}" 
+              data-id="{{item.id}}" 
+              bindtap="showDrawer" 
+              data-name="{{item.name}}"
+            >
+                <image class="img img-hot" src="{{item.logo}}"  mode="aspectFit" data-id="{{item.id}}"  data-name="{{item.name}}">
+                </image>
+                <view class="hot-name" data-id="{{item.id}}" data-name="{{item.name}}">
+                    {{item.name}}
+                </view>
+            </view>
+        </view>
+      </view>
+    </view>
+
+    <!--品牌列表 S-->
+    <view class="brand-scroll" >
+        <view class="brand-item" wx:for="{{brandData.all}}" wx:for-index="brandIndex" wx:for-item="brandList" wx:key="index">
+            <text id="{{brandList.title}}">{{brandList.title}}</text>
+            <view wx:for="{{brandList.list}}" wx:for-item="carItem"  wx:key="index" data-id="{{carItem.id}}" catchtap="showDrawer" data-name="{{carItem.name}}">
+                <image class="img img-list" src="{{carItem.logo}}"  mode="aspectFit" data-id="{{carItem.id}}" data-name="{{carItem.name}}"></image>
+                <view class="brand-name" data-id="{{carItem.id}}" data-name="{{carItem.name}}">{{carItem.name}}</view>
+            </view>
+        </view>
+    </view>
+    <!--品牌列表 E-->
+  </scroll-view>
+
+  <!--字母列表 S-->
+  <view class="letter-item" bindtap ="clickLetter" catchtouchmove="touchMove" catchtouchend="touchEnd">
+      <view class="letter-li" data-current="{{letterIndex}}" wx:for="{{letterList}}"  wx:key="{{index}}" wx:for-item="letterItem" wx:for-index="letterIndex" data-letter="{{letterItem}}" >
+        {{letterItem == 'hot' ? '热' : letterItem}}
+        <view class="lettet-tip" wx-if="{{selected == letterIndex}}">{{letterItem == 'hot' ? '热' : letterItem}}</view>
+      </view>
+  </view>
+      
+
+  <sidebar show-dialog="{{showDialog}}" direction="left">
+    <scroll-view class="scoll-car-series" scroll-y>
+      <view class="series-row" wx:for="{{carSeries}}" wx:key="{{index}}" bindtap="seletCarSeries" data-name="{{item.name}}" data-id="{{item.id}}">
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </sidebar>
+  
+</view>
+

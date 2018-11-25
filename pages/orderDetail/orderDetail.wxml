@@ -1,0 +1,73 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class="page">
+  <view class="top-tip status{{detail_data.status}} {{showTop?'active':''}}" wx:if="{{detail_data.status == 1}}">{{countDownDay}}{{countDownHour}}{{countDownMinute}}{{countDownSecond}}后未付款，该单将自动取消</view>
+  <view class="top-tip status{{detail_data.status}} {{showTop?'active':''}}" wx:else>{{detail_data.status_text}}</view> 
+  <view class="content">
+    <view class="list-wrp">
+      <view class="list-row list-title">
+        <view class="flex1">{{detail_title}}</view>
+      </view>
+      <view class="list-row list-title" wx:if="{{detail_data.washer}}" >
+        <view class="flex1">擦车服务</view><view class="right-col" bindtap="makePhoneCall">{{detail_data.washer}}<icon class="title-icon"><image src="phone.png" mode="widthFix"></image></icon></view>
+      </view>
+      <view class="list-item {{!detail_data.button?'no-border-bottom':''}}">
+        <view class="list-row">
+          <view class="left-col">订单编号</view><view class="flex-col">{{detail_data.order_id}}</view>
+        </view>
+        <view class="list-row">
+          <view class="left-col">服务项目</view><view class="flex-col">{{detail_data.wash_product}}</view>
+        </view>
+        <view class="list-row">
+          <view class="left-col">申请时间</view><view class="flex-col">{{detail_data.create_at}}</view>
+        </view>
+        <view class="list-row">
+          <view class="left-col">服务时间</view><view class="flex-col">{{detail_data.wash_time}}</view>
+        </view>
+        <view class="list-row">
+          <view class="left-col">汽车信息</view><view class="flex-col">{{detail_data.plate_number}}  {{detail_data.model}}  {{detail_data.brand}}  {{detail_data.color}}</view>
+        </view>
+        <view class="list-row">
+          <view class="left-col">服务地址</view><view class="flex-col">{{detail_data.address}}</view>
+        </view>
+        <view class="list-row">
+          <view class="left-col">订单金额</view><view class="flex-col">{{detail_data.total}}</view>
+        </view>
+      </view>
+      <view class="list-row list-btn" wx:if="{{detail_data.button}}">
+        <view><button class="" bindtap="changeOrder" data-action="{{detail_data.button.action}}" data-text="{{detail_data.button.text}}">{{detail_data.button.text}}</button></view>
+      </view>
+    </view>
+
+    <view class="list-wrp progress">
+      <view class="list-row list-title">
+        <view class="felx1">{{progress_title}}</view>
+      </view> 
+      <view class="list-item"> 
+        <view class="list-row-wrp first-line"></view>
+        <view class="list-row-wrp {{progress.create_at?'highlight':''}}" wx:for="{{log_data}}" wx:key="{{index}}" wx:for-item="progress" wx:for-index="idx">
+          <view class="list-row">
+            <view class="progress-text flex1">{{progress.action_text}}</view>
+            <view class="progress-time flex1">{{progress.create_at}}</view>
+          </view>
+          <view class="images-content" wx:if="{{progress.images}}">
+            <view class="iamges-title">{{progress.images.title}}</view>
+            <view class="images-box">
+              <image mode="center" bindtap="previewImg" wx:for="{{progress.images.images}}" wx:key="{{index}}" wx:for-item="images" src="{{images.thumb}}" data-url="{{images.src}}" data-value="{{idx}}"></image>
+            </view>
+          </view>
+        </view>
+        
+      </view> 
+      
+    </view> 
+
+    
+  </view>
+  <view class="fixed-bottom"  wx:if="{{detail_data.status == 1}}">
+    <view class="price">金额：<text class="red-text">{{detail_data.total}}</text></view>
+    <view class="fixed-btn">
+      <button bindtap="selectPay" type="primary">去支付</button>
+    </view>
+  </view>
+  <payment key-id="{{detail_data.order_id}}" total-value="{{total_value}}" balance="{{balance}}" show-dialog="{{showDialog}}" pay-type="order"></payment>
+</view>

@@ -1,0 +1,37 @@
+<!--pages/orderList/orderList.wxml-->
+<view class="page">
+  <view class="content" wx:if="{{noData}}">
+    <view class="result-wrp" >
+      <view class="result-img"><image src="nodata.png" mode="widthFix"></image></view>
+      <view class="result-text"><text>您还没有订单，赶快去下单吧！</text></view>
+      <!-- <button class="submit-btn"  bindtap="">查看订单</button> -->
+    </view>
+  </view>
+  <scroll-view class="list-view" wx:else scroll-y="true" bindscrolltolower="loadMore" lower-threshold="-100" enable-back-to-top="true" style="height:{{winHeight}}px;overflow: hidden;">
+    <view class="list-wrp" wx:for="{{orderList}}" wx:key="{{index}}" wx:for-item="orderList" data-status="{{orderList.status.status}}" data-id="{{orderList.order_id.value}}" bindtap="toOrderDetail">
+      <view class="list-item" >
+        <view class="list-row">
+          <view class="left-col">{{orderList.order_id.text}}</view><view class="flex-col">{{orderList.order_id.value}}</view><view class="right-col status{{orderList.status.status}}">{{orderList.status.value}}<icon class="arrow-right"></icon></view>
+        </view>
+        <view class="list-row">
+          <view class="left-col">{{orderList.wash_product.text}}</view><view class="flex-col">{{orderList.wash_product.value}}</view>
+        </view>
+        <view class="list-row">
+          <view class="left-col">{{orderList.create_at.text}}</view><view class="flex-col">{{orderList.create_at.value}}</view>
+        </view>
+        <view class="list-row">
+          <view class="left-col">{{orderList.wash_time.text}}</view><view class="flex-col">{{orderList.wash_time.value}}</view>
+        </view>
+        <view class="list-row">
+          <view class="left-col">{{orderList.car.text}}</view><view class="flex-col">{{orderList.car.value.plate_number}}  {{orderList.car.value.brand}}  {{orderList.car.value.model}}  {{orderList.car.value.color}}</view>
+        </view>
+        <view class="list-row">
+          <view class="left-col">{{orderList.address.text}}</view><view class="flex-col">{{orderList.address.value}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="bottom-text" wx:if="{{isBottomText}}">{{bottomText}}</view> 
+  </scroll-view>
+  
+
+</view>

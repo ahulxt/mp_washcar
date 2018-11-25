@@ -1,0 +1,27 @@
+<!--pages/myCoupon/myCoupon.wxml-->
+<view class="page">
+  <view class="content">
+    
+    <view class="coupon-wrp nodata" wx:if="{{noData}}">您还没有洗车卡，赶紧去购买吧！</view>
+    <view class="coupon-wrp" wx:else>
+      <view class="coupon-list {{(item.effect_status == 3 || item.effect_status ==4)?'gray':''}}" wx:for="{{myCoupon}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="" style="background:#FEE800 url({{item.background}});background-size:cover">
+        <view class="left-item">
+          <view class="coupon-title">{{item.name}}</view>
+          <view class="coupon-item">
+            <view class=""> 适用项目：{{item.wash_product}}</view>
+          </view>
+          <view class="coupon-desc">
+            <view class="coupon-desc">剩余免费使用次数：{{item.left_times}}次</view>
+            <view class="coupon-desc">过期时间：{{item.expire_at}}</view>
+          </view>
+        </view>
+        <view class="icon" wx:if="{{item.effect_status == 3 || item.effect_status ==4}}">
+        <image wx:if="{{item.effect_status == 3}}" src="used.png" mode="aspectFit"></image>
+          <image wx:if="{{item.effect_status == 4}}" src="overdue.png" mode="aspectFit"></image>
+        </view>
+        
+      </view>
+    </view>
+
+  </view>
+</view>

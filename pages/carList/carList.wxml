@@ -1,0 +1,24 @@
+<!--pages/car/carList.wxml-->
+<view class="page">
+  <view class="content">
+    <view wx:for="{{carList}}" wx:key="{{index}}" class="car-list {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtap="selectCar" data-id="{{item.car_id}}" data-value="{{item.plate_number}}  {{item.brand}}  {{item.model}}  {{item.color}}">
+      <view class="car-item">
+        <icon class="car-icon"><image src="/images/car-list.png" mode="aspectFit"></image></icon>
+        <view class="car-brand">
+          <view><text>{{item.plate_number}}</text><text>{{item.color}}</text></view>
+          <view><text>{{item.brand}}</text><text>{{item.model}}</text></view>
+        </view>
+        <icon class="arrow-left"><image></image></icon>
+      </view>
+
+    <!--这里是左滑按钮部分----start-->
+      <view bindtap="delItem" class="del">
+          <view class="del" data-id="{{item.car_id}}"  data-index="{{index}}" catchtap="del">删除</view>
+      </view>
+    </view>
+    <view class="addCar" bindtap="chooseCarBrand">
+      + 添加车辆
+    </view>
+  </view>
+</view>
+

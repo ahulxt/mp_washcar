@@ -1,0 +1,39 @@
+<!--pages/couponList/couponList.wxml-->
+<view class="page">
+  <view class="content">
+    <view class="box-wrp">
+      <view class="balance">余额：<text>{{balance}}</text></view>
+      <button class="recharge-btn" bindtap="toRecharge">充值</button>
+    </view>
+    <view class="gray-hr"></view>
+    <view class="box-wrp input-group no-bottom-border" bindtap="toMyCoupon">
+      <view class="balance">我的洗车卡</view>
+      <icon class="arrow-right"></icon>
+    </view>
+    <view class="gray-hr"></view>
+    <view class="coupon-wrp">
+      <coupon wx:for="{{washCardsList}}" wx:key="{{index}}" data-index="{{index}}" coupon-list="{{item}}" data-id="{{item.id}}"  bindtap="toCouponDetail"></coupon>
+    </view>
+    
+    <!-- <view class="coupon-wrp">
+      <view class="coupon-list" wx:for="{{washCardsList}}" wx:key="{{index}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="showPop" style="background:#FEE800 url({{item.background}});background-size:cover">
+        <view class="label" wx:if="{{item.hot_status == 1}}">热销</view>
+        <view class="coupon-title">{{item.name}}</view>
+        <view class="coupon-amount"><text class="now">{{item.price}}</text>元<text class="ori">{{item.price_ori}}元</text></view>
+        <view class="coupon-expires">有效期{{item.expire_date}}天</view>
+      </view>
+    </view> -->
+
+
+
+    <!--遮罩 -->
+    <view class="drawer-mask" bindtap="hideDrawer" wx:if="{{showPop}}" catchtouchmove></view>
+    <!-- 弹框 -->
+    <view class="popup" animation="{{animationData}}">
+      <view class="close" bindtap="hideDrawer">×</view>
+      <view class="pop-title"><text class="now">实付：{{currentTarget.price}}元</text><text class="ori">（原价{{currentTarget.price_ori}}元）</text></view>
+      <view class="pop-desc"><text>{{currentTarget.introduction}}</text></view>
+      <view><button class="submit-btn">立即充值</button></view>
+    </view>
+  </view>
+</view>

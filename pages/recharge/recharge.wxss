@@ -1,0 +1,49 @@
+/* pages/recharge/recharge.wxss */
+.box-wrp{
+  background: #fff;
+  padding:20rpx 40rpx;
+  margin-bottom:30rpx;
+}
+.item-title{
+  color:#000;
+  font-size:30rpx;
+  margin-top:10rpx;
+}
+.item-count{
+  color:#FF0000;
+  font-size:60rpx;
+}
+.recharge-wrp{
+  display: flex;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.recharge-money-box .item-title{
+  font-size:28rpx;
+  color:#666;
+  margin-bottom:20rpx;
+}
+.recharge-money{
+  width:44%;
+  margin:15rpx 10% 15rpx 0;
+  padding:38rpx 0;
+  border:1px solid #999;
+  color:#666;
+  font-size:46rpx;
+  text-align: center;
+  border-radius: 20rpx;
+}
+.recharge-money:nth-child(even){
+  margin-right:0;
+}
+.btn-wrp{
+  width: 92%;
+  margin:0 auto;
+}
+.active{
+  color:#FEAD21;
+  border: 1px solid #FEAD21;
+}
+.hide{
+  display: none;
+}

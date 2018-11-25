@@ -1,0 +1,20 @@
+<!--pages/washList/washList.wxml-->
+<view class="page">
+  <view class="content">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="list-wrp" wx:for="{{washList}}"  wx:key="{{index}}" data-id="{{item.id}}" data-name="{{item.name}}" data-price="{{item.price.value}}"  data-oriprice="{{item.price_ori.value}}"  bindtap="radioTap">
+      <view class="left">
+        <view class="wash-title">{{item.name}}</view>
+        <view><text class="ori">{{item.price_ori.text}}{{item.price_ori.value}}</text><text class="discount red-text">{{item.discount}}</text></view>
+      </view>
+      <view class="center">
+        <view class="detail-link blue-text" catchtap="toDetail" data-id="{{item.id}}">内容详情</view>
+        <view class="red-text">{{item.price.value}}</view>
+      </view>
+      <view class="right" >
+        <radio value="{{item.id}}" checked="{{wash_product_id == item.id}}" color="#4C4B5B"/>{{item.value}}
+      </view>
+    </label>
+  </radio-group>
+  </view>
+</view>

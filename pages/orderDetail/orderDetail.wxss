@@ -1,0 +1,183 @@
+/* pages/orderDetail/orderDetail.wxss */
+.content{
+  width: 92%;
+  margin:0 auto;
+  padding:20rpx 0 100rpx;
+}
+.top-tip{
+  width: 100%;
+  height:75rpx;
+  line-height: 75rpx;
+  background: #999;
+  color:#fff;
+  text-align: center;
+  font-size:28rpx;
+  position: relative;
+  top:-75rpx;
+  -webkit-transition: all 1s;
+  transition:all 1s;
+}
+.top-tip.active{
+  -webkit-transform: translateY(75rpx);
+  transform: translateY(75rpx);
+}
+.list-title{
+  display: flex;
+  align-items: center;
+  color:#333;
+  font-size:32rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom:1px solid #ddd;
+  margin:0;
+}
+.title-icon{
+  width: 42rpx;
+  height:42rpx;
+  margin-left:16rpx;
+  position: relative;
+  top:-4rpx;
+}
+.title-icon image{
+  width: 100%;
+  height:100%;
+}
+.list-item{
+  border-bottom:1px solid #ddd;
+}
+.progress .list-item{
+  border-bottom:0;
+}
+.list-btn{
+  align-items: center;
+  justify-content: flex-end;
+  height:100rpx;
+  margin:0;
+}
+.list-btn button{
+  color:#333;
+  font-size:28rpx;
+  border:1px solid #ddd;
+  border-radius: 10rpx;
+  height:60rpx;
+  line-height: 60rpx;
+}
+.progress .list-item{
+  padding-left:20rpx;
+}
+.progress .list-item .list-row{
+  align-items: center;
+  margin:0;
+  flex-wrap:wrap;
+  font-size: 30rpx;
+  color:#666;
+  position: relative;
+}
+.progress .list-item .list-row-wrp{
+  align-items: center;
+  margin:0;
+  padding:0 0 50rpx 50rpx;
+  font-size: 30rpx;
+  color:#666;
+  position: relative;
+}
+.progress .list-item .list-row-wrp::after{
+  content: '';
+  border-left:1px solid #ddd;
+  position: absolute;
+  top:10rpx;
+  bottom:-10rpx;
+  left:0;
+}
+.progress .list-item .list-row-wrp::before{
+  content:'';
+  width:22rpx;
+  height:22rpx;
+  border-radius: 50%;
+  position: absolute;
+  top:10rpx;
+  background: #ddd;
+  left:-10rpx;
+}
+.progress .list-item .list-row-wrp.highlight::before{
+  background: #25AE5F;
+  border:6rpx solid #B9E5CC;
+  top:0;
+  left:-15rpx;
+  z-index: 100;
+}
+.progress .list-item .list-row-wrp.highlight .progress-text{
+  color:#25AE5F;
+}
+.progress .list-item .list-row-wrp:first-child::before{
+  content: '';
+  width: 0;
+  height:0;
+} 
+.progress .list-item .list-row-wrp:last-child::after{
+  border-left: 0;
+} 
+.first-line{
+  height:20rpx;
+  padding:0;
+}
+
+.progress-time{
+  font-size:24rpx;
+}
+.images-content{
+  width: 100%;
+}
+.iamges-title{
+  height:80rpx;
+  line-height: 80rpx;
+  color:#333;
+}
+
+.images-box image{
+  width: 170rpx;
+  height: 150rpx;
+  margin-right:15rpx;
+  margin-bottom: 15rpx;
+}
+/*灰色--已完成，已关闭  */
+.status5,.status7{
+  background:#999;
+}
+.status3{
+  background:#1AAD19;
+}
+.status1{
+  background:#E8011A;
+}
+.status2{
+  background:#E8011A;
+}
+.fixed-bottom{
+  width: 100%;
+  height:100rpx;
+  position: fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  background: #fff;
+  border-top:1px solid #ddd;
+  display: flex;
+  z-index: 1000;
+}
+.price{
+  flex: 1;
+  font-size: 32rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.fixed-btn {
+  flex: 1;
+}
+.fixed-btn button{
+  margin:0;
+  border-radius: 0;
+  height:100rpx;
+  line-height: 100rpx;
+  color: #fff;
+}

@@ -1,0 +1,22 @@
+/* pages/login/login.wxss */
+
+.content{
+  width:92%;
+  padding:20rpx 0;
+  margin:0 auto
+}
+.login-form{
+  background: #fff;
+}
+.form-group{
+ border-radius: 10rpx;
+}
+.input-group input{
+  width: 70%
+}
+
+
+
+
+
+

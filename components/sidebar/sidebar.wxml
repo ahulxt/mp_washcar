@@ -1,0 +1,6 @@
+<view class="sidebar" style="position:fixed;{{direction}}:100%;">
+  <view class="drawer-mask" bindtap="hideDrawer" wx:if="{{showDialog}}" catchtouchmove></view>
+  <view scroll-y  class="sidebar {{(showDialog&&direction=='right')?'active':''}} {{(showDialog&&direction=='left')?'active-right':''}}" catchtouchmove>
+    <slot></slot>
+  </view>
+</view>

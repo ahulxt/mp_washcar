@@ -1,0 +1,34 @@
+
+<view class="payment">
+  <view class="drawer-mask" bindtap="hideDrawer" wx:if="{{showDialog}}" catchtouchmove></view>
+  <view class="bottom-slider {{showDialog?'active':''}}">
+    <view class="slider-item title">请选择支付方式</view>
+
+    <checkbox-group  wx:if="{{isCheckbox}}" bindchange="multiSelect">
+      <label class="checkbox slider-item">
+        <view class="name"><image class="icon" src="pay1.png" mode="aspectFill"></image> <text class="text">我的钱包\n可用余额：{{balance}}元</text></view>
+        <checkbox value="balance" checked="true"/>
+      </label>
+      <label class="checkbox slider-item">
+        <view class="name"><image class="icon" src="pay2.png" mode="aspectFill"></image> <text class="text">微信支付</text></view>
+        <checkbox value="wechat" checked="true" disabled="true"/>
+      </label>
+    </checkbox-group>
+
+    <radio-group wx:else bindchange="select">
+      <label class="slider-item">
+        <view class="name"><image class="icon" src="pay1.png" mode="aspectFill"></image> <text class="text">我的钱包\n可用余额：{{balance}}元</text></view>
+        <radio class="radio" value="balance" checked="{{isBalanceRadio}}" disabled="{{isWechatRadio}}"></radio>
+      </label>
+      <label class="slider-item">
+        <view class="name"><image class="icon" src="pay2.png" mode="aspectFill"></image> <text class="text">微信支付</text></view>
+        <radio class="radio" value="wechat" checked="{{isWechatRadio}}"></radio>
+      </label>
+    </radio-group>
+
+    
+    <view class="slider-item right-text" wx:if="{{isCheckbox && method=='wechat,balance'}}">  余额支付：<text class="red-text">{{balance}}  </text>元 微信支付：<text class="red-text">{{diffCount}}元</text></view>
+    <view class="slider-item right-text" wx:else>需付款：<text class="red-text">{{totalValue}}元</text></view>
+    <button type="primary" class="pay" bindtap="pay">确认支付</button>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/washDetail/washDetail.wxml-->
+<view class="page">
+  <view class="content">
+    <view class="banner">
+      <swiper class="banner-img" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}">
+        <block wx:for="{{detail.banner.value}}"  wx:key="{{index}}">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="box-wrp">
+      
+      <view class="title"><view>{{name}}</view><view class="sales">{{detail.sale_count.text}}</view></view>
+      <view class="price red-text">{{detail.price.value}}/次</view>
+      <view class="ensure">
+        <view class="ensure-item color666">{{detail.promise.text}}</view>
+        <view class="ensure-item" wx:for="{{detail.promise.value}}" wx:key="{{index}}">
+          <image class="list-icon" src="ensure1.png"></image>
+          <text>{{item}}</text>
+        </view>
+      </view>
+      
+    </view>
+    <view class="box-wrp">
+      <view class="title">{{detail.service_content.text}}</view>
+      <view class="detail-service">
+        <text>{{detail.service_content.value}}</text>
+      </view>
+    </view>
+
+    
+  </view>
+</view>
